@@ -1,0 +1,46 @@
+<h1 style="text-align: center;">Product Order List</h1>
+<table class="grid">
+    <thead>
+        <tr>
+            <th class="tb">Product Name</th>
+            <th class="tb">Quantity</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let product of products; let i = index">
+            <td class="tb">
+                <select [(ngModel)]="products[i].name" (change)="validateRow(i)">
+                    <option value="" disabled>Choose Product</option>
+                    <option *ngFor="let option of productOptions" [value]="option">{{ option }}</option>
+                </select>
+            </td>
+            <td class="tb">
+                <select [(ngModel)]="products[i].count" (change)="validateRow(i)">
+                    <option value="" disabled>Choose Quantity</option>
+                    <option *ngFor="let option of countOptions" [value]="option">{{ option }}</option>
+                </select>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<button class="btn" (click)="addRow()" [disabled]="products.length >= 8">Add Row</button>
+<button class="btn" (click)="showOrder()">Show Order</button>
+
+<div *ngIf="order.length > 0">
+    <h2 style="padding-left: 600px;padding-top: 50px;">Order Summary</h2>
+    <table class="grid">
+        <thead>
+            <tr>
+                <th class="tb">Product Name</th>
+                <th class="tb">Quantity</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of order">
+                <td class="tb">{{ item.name }}</td>
+                <td class="tb">{{ item.count }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <button class="btn" (click)="readOrder()">What is my Order?</button>
+</div>

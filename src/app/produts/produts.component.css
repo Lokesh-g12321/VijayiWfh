@@ -1,0 +1,58 @@
+.grid {
+    border-collapse: collapse;
+    width: 50%;
+    margin: 20px auto;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 4px 8px rgba(47, 78, 86, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .grid th.tb {
+    background-color: #4778e3;
+    color: white;
+    padding: 12px;
+    text-align: center;
+  }
+  
+  .grid td.tb {
+    padding: 12px;
+    text-align: center;
+  }
+  
+  select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+  }
+  
+  select:focus {
+    border-color:black;
+    outline: none;
+  }
+  
+  button.btn {
+    display: block;
+    margin: 10px auto;
+    padding: 8px 16px;
+    background-color: #4778e3;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+  }
+  
+  button.btn:hover {
+    background-color:#4778e3;
+  }
+  
+  button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
